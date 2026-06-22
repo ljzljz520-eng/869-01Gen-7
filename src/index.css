@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+
+:root {
+  font-family: "Noto Sans SC", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #08101c;
+  color: #e2e8f0;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(30, 58, 95, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), inset 0 0 20px rgba(0, 212, 255, 0.05);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-400 text-primary-900 font-semibold px-6 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/30;
+  }
+
+  .card {
+    @apply glass rounded-2xl p-6 glow-border;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.5);
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.heat-zone {
+  transition: all 0.3s ease;
+}
+
+.heat-zone:hover {
+  filter: brightness(1.2);
+  transform: scale(1.02);
+}
